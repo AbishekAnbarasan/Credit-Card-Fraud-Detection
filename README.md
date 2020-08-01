@@ -5,6 +5,8 @@
 ### <ins>Table of contents</ins>:
   - [ Introduction ](#intro)
   - [ Data Description & EDA ](#desc)
+  - [ Sampling ](#sample)
+  - [ Metrics & Validation ](#val)
   - [ Modeling & Results ](#res)
   - [ Conclusion ](#con)
   
@@ -22,7 +24,7 @@ This essentially needs to be reduced with constant innovations and in this proje
 
 ### Data Description:
 
-Note:Sorry for the sub par quality of plots as they were snipped from report because the code file was lost.
+##### Note: Sorry for the sub par quality of plots as they were snipped from report because the code file was lost.
 
 The dataset is obtained from Vesta corporation via Kaggle competition. The training dataset is of the shape 590540*434 after merging the train identity and train transaction datasets. The two datasets have Transaction Id’s as common. The Train transaction has many important features like Time delta which is the transaction timeline from a given reference. The data feature isFraud is the response variable which is a binary feature. It also has Product codes which haven’t been revealed.
 
@@ -57,3 +59,45 @@ Because the datasets were taking up huge memory, memory reduction technique was 
 |:--:| 
 
 Both LDA and PCA were performed and PCA was chosen, because it explained the total variance in the data better than LDA and I worked with only 100 features for modelling which yielded impressive results.
+
+<a name='sample'></a>
+
+### Sampling:
+
+One of the major problems that had to be tackled was dealing with the class imbalance. Almost 96 percent of the values in the training set were found to be not associated with any type of fraud activity. There were only 4 percent of the data to be identified as fraudulent. This when not dealt with correctly will lead to prediction results which will be high, but they will be misleading because the number of False positives might be very dangerous in card fraud detection. So, the follwing methods were followed to tackle the problem.
+    - [ Under Sampling ](#us)
+    - [ Over Sampling ](#os)
+
+| ![plot for data imbalance](images/plt7.JPG) | 
+|:--:| 
+
+<a name='us'></a>
+
+#### Under-Sampling
+
+Under sampling is a method in which the majority class is reduced to match the specified number or the minority class. Then the results of it are evaluated by fitting a logistic regression classifier to check the area under the ROC curve.
+
+| ![plot for under sampling](images/plt8.JPG) | 
+|:--:| 
+
+<a name='os'></a>
+
+#### Over-Sampling
+
+Over sampling is a method in which the minority class is increased to match the specified number or the majority class. Then the results of it are evaluated by fitting a logistic regression classifier to check the area under the ROC curve.
+
+| ![plot for under sampling](images/plt9.JPG) | 
+|:--:| 
+
+
+<a name='val'></a>
+
+### Metrics and Validation
+
+Area under the receiver operating characteristic curve (AUROC), and F1 score were used to evaluate the model. For validation of models, Adversarial validation and Cross validation were implemented. 
+
+| ![plot for Adversarial validation](images/plt10.JPG) | 
+|:--:| 
+| **Pseudocode for Adversarial Validation** |
+
+
