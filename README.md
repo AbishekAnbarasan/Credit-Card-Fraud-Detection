@@ -4,8 +4,7 @@
 
 ### <ins>Table of contents</ins>:
   - [ Introduction ](#intro)
-  - [ Data Description ](#desc)
-  - [ EDA ](#eda)
+  - [ Data Description & EDA ](#desc)
   - [ Modeling & Results ](#res)
   - [ Conclusion ](#con)
   
@@ -19,3 +18,13 @@ A staggering $24.26 Billion was lost in 2018 due to payment card fraud worldwide
 
 This essentially needs to be reduced with constant innovations and in this project, I evaluated in detail random forests, support vector machines, logistic regression, light gradient boosting and extreme gradient boosting algorithms as an attempt to detect the fraudulent transactions better. Though the data mining techniques are in profuse use in many fields, little have been their usage in card detection. But, many papers in early 1990’s have used neural networks and to some extent Markov models. Their study was focused on impact of aggregating transaction level data of fraudulent prediction. The reason  neural networks are not tried is because they are prone to get overfit and may get struck in a local minima or saddle point. Also, the data mining models gives flexible optimization approach. Ensemble methods were preferred because they have very good generalization performance. Many statistical methods like logistic regression, nearest neighbor, Bayes classifier have been used to develop models and with evolution of AI and machine learning, the other advanced techniques were also used and compared with the earlier mentioned models. 
 
+<a name='desc'></a>
+
+### Data Description:
+
+The dataset is obtained from Vesta corporation via Kaggle competition. The training dataset is of the shape 590540*434 after merging the train identity and train transaction datasets. The two datasets have Transaction Id’s as common. The Train transaction has many important features like Time delta which is the transaction timeline from a given reference. The data feature isFraud is the response variable which is a binary feature. It also has Product codes which haven’t been revealed.
+
+The Transaction amount is given in USD and it has a fair distribution only after transforming it which can be seen in the plot below.
+
+| ![plot of distribution of transaction amount](images/plot1.JPG) | 
+|:--:| 
