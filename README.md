@@ -104,7 +104,7 @@ Over sampling is a method in which the minority class is increased to match the 
 
 <a name='val'></a>
 
-### Metrics and Validation
+### Metrics and Validation:
 
 Area under the receiver operating characteristic curve (AUROC), and F1 score were used to evaluate the model. For validation of models, Adversarial validation and Cross validation were implemented.
 
@@ -114,7 +114,7 @@ Area under the receiver operating characteristic curve (AUROC), and F1 score wer
 
 <a name='res'></a>
 
-### Modeling and Results
+### Modeling and Results:
 
 The hyperparameters that were tuned for **Random Forest** model are Number of Trees set at 100, 200 and 300 and the minimum number of samples at the leaf node 10, 30, 50. And max Depth at 8, 12.
 **Logistic Regression** Model has only dummy significance parameter tuning. The hyperparameters that were tuned for **Support Vector Machine** model varies from kernel to kernel. They include, gamma tuning and regularization parameter. Here, various kernels like linear, sigmoid waas considered
