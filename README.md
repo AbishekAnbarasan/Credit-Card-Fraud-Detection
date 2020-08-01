@@ -24,7 +24,24 @@ This essentially needs to be reduced with constant innovations and in this proje
 
 The dataset is obtained from Vesta corporation via Kaggle competition. The training dataset is of the shape 590540*434 after merging the train identity and train transaction datasets. The two datasets have Transaction Id’s as common. The Train transaction has many important features like Time delta which is the transaction timeline from a given reference. The data feature isFraud is the response variable which is a binary feature. It also has Product codes which haven’t been revealed.
 
+| ![plot of product cd](images/plt2.JPG) | 
+|:--:| 
+
 The Transaction amount is given in USD and it has a fair distribution only after transforming it which can be seen in the plot below.
 
 | ![plot of distribution of transaction amount](images/plt1.JPG) | 
+|:--:| 
+
+I have created new features hour, day and month when the transaction is been done. These details are extracted from Time delta which is in the seconds format and spans over four months in time. This is also been offset to get correct day of the week. These new features were very important in determining which time of day of week were the fraudulent transactions at peak, etc.
+There are also other important features like, card1, card2, card3, card4, card5 and card6 which has details of card type, card category, issued bank, country, etc which were very useful. Also,addresses of the receiver and purchaser were given including their email domain which can be visualized in the below plot.
+
+| ![plot of cards](images/plt3.JPG) | 
+|:--:| 
+
+There are also other features which are mentioned as vesta engineered features, and the actual meaning of it were masked. The train Identity also has Transaction Identity which is to be merged with train transaction. It has categorical features like id which has only True, False or nan values and their meanings are also masked. They contain the type of device like mobile, desktop, etc from which the transactions were performed and Device Info such as Samsung, RedMI, Ios, windows, etc. The below plots visualizes the top devices from which transactions are done, the device type counts and most importantly the percentage of fraud which were done on device type which has quite interesting result.
+
+| ![plot of top ten devices](images/plt4.JPG) | 
+|:--:| 
+
+| ![plot theft based on devices](images/plt5.JPG) | 
 |:--:| 
