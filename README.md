@@ -65,6 +65,7 @@ Both LDA and PCA were performed and PCA was chosen, because it explained the tot
 ### Sampling:
 
 One of the major problems that had to be tackled was dealing with the class imbalance. Almost 96 percent of the values in the training set were found to be not associated with any type of fraud activity. There were only 4 percent of the data to be identified as fraudulent. This when not dealt with correctly will lead to prediction results which will be high, but they will be misleading because the number of False positives might be very dangerous in card fraud detection. So, the follwing methods were followed to tackle the problem.
+
     - [ Under Sampling ](#us)
     - [ Over Sampling ](#os)
 
