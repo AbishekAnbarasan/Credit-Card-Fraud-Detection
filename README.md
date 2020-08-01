@@ -101,4 +101,23 @@ Area under the receiver operating characteristic curve (AUROC), and F1 score wer
 |:--:| 
 | **Pseudocode for Adversarial Validation** |
 
+<a name='res'></a>
+
+### Modeling and Results
+
+The hyperparameters that were tuned for **Random Forest** model are Number of Trees set at 100, 200 and 300 and the minimum number of samples at the leaf node 10, 30, 50. And max Depth at 8, 12. 
+**Logistic Regression** Model has only dummy significance parameter tuning. The hyperparameters that were tuned for **Support Vector Machine** model varies from kernel to kernel. They include, gamma tuning and regularization parameter. Here, various kernels like linear, sigmoid waas considered
+The hyperparameters that were tuned for **Gradient Boosting** model are number of trees (1000, 1500), interaction depth (1,3), learning rate (0.001, 0.005, 0.008), maxdepth(9,12).  The prediction probability is valued at 1 for >0.5 and 0 for <0.5.
+
+#### Variable Importance
+
+| Model | Variable Importance plot |
+|:--:|:--:|
+| Random Forests | ![plot for Adversarial validation](images/plt10.JPG) |
+| Logistic regression | ![plot for Adversarial validation](images/plt10.JPG) |
+| Support Vector Machine | ![plot for Adversarial validation](images/plt10.JPG) |
+| Light Gradient Boosting | ![plot for Adversarial validation](images/plt10.JPG) |
+| Extreme Gradient Boosting | ![plot for Adversarial validation](images/plt10.JPG) | 
+
+
 
