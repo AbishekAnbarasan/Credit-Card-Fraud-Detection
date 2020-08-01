@@ -26,5 +26,5 @@ The dataset is obtained from Vesta corporation via Kaggle competition. The train
 
 The Transaction amount is given in USD and it has a fair distribution only after transforming it which can be seen in the plot below.
 
-| ![plot of distribution of transaction amount](images/plot1.JPG) | 
+| ![plot of distribution of transaction amount](images/plt1.JPG) | 
 |:--:| 
