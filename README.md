@@ -120,6 +120,8 @@ The hyperparameters that were tuned for **Random Forest** model are Number of Tr
 **Logistic Regression** Model has only dummy significance parameter tuning. The hyperparameters that were tuned for **Support Vector Machine** model varies from kernel to kernel. They include, gamma tuning and regularization parameter. Here, various kernels like linear, sigmoid waas considered
 The hyperparameters that were tuned for **Gradient Boosting** model are number of trees (1000, 1500), interaction depth (1,3), learning rate (0.001, 0.005, 0.008), maxdepth(9,12). The prediction probability is valued at 1 for >0.5 and 0 for <0.5.
 
+<br>
+
 #### Variable Importance
 
 |           Model           |               Variable Importance plot               |
@@ -130,6 +132,8 @@ The hyperparameters that were tuned for **Gradient Boosting** model are number o
 |  Light Gradient Boosting  | ![plot for Adversarial validation](images/plt14.JPG) |
 | Extreme Gradient Boosting | ![plot for Adversarial validation](images/plt15.JPG) |
 
+<br>
+
 #### Confusion Matrix
 
 |           Model           |               Variable Importance plot               |
@@ -139,4 +143,21 @@ The hyperparameters that were tuned for **Gradient Boosting** model are number o
 |  Support Vector Machine   | ![plot for Adversarial validation](images/plt18.JPG) |
 |  Light Gradient Boosting  | ![plot for Adversarial validation](images/plt19.JPG) |
 | Extreme Gradient Boosting | ![plot for Adversarial validation](images/plt20.JPG) |
+
+<a name='con'></a>
+
+### Conclusion:
+
+|           Model           | F1 score | Precision | Specificity | FP rate | Sensitivity |
+| :-----------------------: | :------: | :-------: | :---------: | :-----: | :---------: |
+|      Random Forests       |  0.9710  |  0.9967   |   0.9966    | 0.0034  |   0.9467    |
+|    Logistic regression    |  0.9737  |  0.9972   |   0.9971    | 0.0029  |   0.9512    |
+|  Support Vector Machine   |  0.9697  |  0.9968   |   0.9967    | 0.0033  |   0.9440    |
+|  Light Gradient Boosting  |  0.9919  |  0.9996   |   0.9996    | 0.0004  |   0.9843    |
+| Extreme Gradient Boosting |  0.9906  |  0.9996   |   0.9996    | 0.0004  |   0.9818    |
+
+
+It can be clearly seen that the Ensemble models outperforms all the other models. Particularly, boosting was so effective on predicting whether the card transaction is fraudulent or not. The best model  obtained was Light Gradient Boosting  which has a roc almost equal to 1. Although the other metrics like precision, sensitivity, specificity are similar amongst the models, the key parameter in determining the difference was roc. And light gradient boosting has the lowest False Positive rate. This was possible only because of correcting the class imbalance which made the model more robust to new pattern. 
+
+Boosting methods produced good quality results that revolved around distinct concepts. Logistic regression underperformed as it was not able to differentiate the two classes better. Usage of adversarial validation helped in making better predictions and obtained low False positive rate. Also, from the variable importance plot it can be seen that Transaction amount and time were one of the most important variables. Higher the transaction amount in peak time, higher the probability of fraudulent transaction. Also, few models detected vesta engineered features to be important, but weren't able to identify them because the real description was masked for privacy purposes. Also, the type of card that had most fraud transactions was visa card which is because they are more in number than the rest of the cards and another interesting fact is that the transactions done through mobile have most fraud transaction probability. It was also noted that IOS did have a less probability of fraud detection
 
