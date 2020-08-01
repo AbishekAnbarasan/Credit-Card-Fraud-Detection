@@ -120,6 +120,12 @@ The hyperparameters that were tuned for **Gradient Boosting** model are number o
 | Extreme Gradient Boosting | ![plot for Adversarial validation](images/plt15.JPG) |
 
 
+#### Confusion Matrix
 
-
-
+| Model | Variable Importance plot |
+|:--:|:--:|
+| Random Forests | ![plot for Adversarial validation](images/plt16.JPG) |
+| Logistic regression | ![plot for Adversarial validation](images/plt17.JPG) |
+| Support Vector Machine | ![plot for Adversarial validation](images/plt18.JPG) |
+| Light Gradient Boosting | ![plot for Adversarial validation](images/plt19.JPG) |
+| Extreme Gradient Boosting | ![plot for Adversarial validation](images/plt20.JPG) |
