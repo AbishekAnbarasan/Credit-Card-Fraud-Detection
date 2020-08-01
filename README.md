@@ -22,6 +22,8 @@ This essentially needs to be reduced with constant innovations and in this proje
 
 ### Data Description:
 
+Note:Sorry for the sub par quality of plots as they were snipped from report because the code file was lost.
+
 The dataset is obtained from Vesta corporation via Kaggle competition. The training dataset is of the shape 590540*434 after merging the train identity and train transaction datasets. The two datasets have Transaction Id’s as common. The Train transaction has many important features like Time delta which is the transaction timeline from a given reference. The data feature isFraud is the response variable which is a binary feature. It also has Product codes which haven’t been revealed.
 
 | ![plot of product cd](images/plt2.JPG) | 
@@ -45,3 +47,13 @@ There are also other features which are mentioned as vesta engineered features, 
 
 | ![plot theft based on devices](images/plt5.JPG) | 
 |:--:| 
+
+The testing set is of shape 506691*433 and it doesn’t have the ground truth labels which made it impossible to find test roc.
+There were a lot of missing values, 232 columns had missing values more than 30 percent and few columns had more than 90 percent missing values, which were dropped because, they add no importance because of the lack of information it could provide. There are about 90 columns with missing values in between 10 and 30 percentage, with majority of them being Vesta engineered rich features.Values were imputed to the columns that has less than 10 percent missing values and the rows of columns were dropped that seemed to offer no importance. For the Categorical values with less than ten percent values, imputation with mode is considered.
+
+Because the datasets were taking up huge memory, memory reduction technique was employed which affected the accuracy by an inconsiderable amount (very less).Also, because of large number of features feature reduction techniques like Principle component Analysis and Linear Discriminant Analysis were employed. The steps involved in LDA are computing the d dimensional mean vectors for the two classes from the dataset followed by computing scatter matrices and corresponding eigen vectors. Then, the eigenvectors are sorted by decreasing eigenvalues and choose k eigenvectors with the largest eigenvalues to form a d×k dimensional matrix and then to matrix to transform the samples onto the new subspace.
+
+| ![plot for feature reduction](images/plt6.JPG) | 
+|:--:| 
+
+Both LDA and PCA were performed and PCA was chosen, because it explained the total variance in the data better than LDA and I worked with only 100 features for modelling which yielded impressive results.
